@@ -9,7 +9,7 @@ public class Menu {
 
     public void start() {
             // TODO
-            while (exit == 'y') {
+            while (exit != 'y') {
                 System.out.println("Simple Java file manager ver. 1.0.\nSelect file operation");
                 fileOperation();
                 exitMenu();
@@ -20,7 +20,7 @@ public class Menu {
         // TODO
         System.out.println("If you want copy file press c: ");
         String read = input.next().toLowerCase();
-        if (read.charAt(0) != 'c'){
+        if (read.charAt(0) == 'c'){
             System.out.println("Input file name: ");
             String readFileName = input.next();
             System.out.println("Input new file name: ");
@@ -36,13 +36,16 @@ public class Menu {
         char close = read.charAt(0);
         switch (close) {
             case 'y':
-                exit = 'y';
-            case 'n':
                 exit = 'n';
+                break;
+            case 'n':
+                exit = 'y';
                 System.out.println("Good luck!");
+                break;
             default:
                 System.out.println("Wrong symbol!");
                 exit = 'n';
+                break;
         }
     }
 }
