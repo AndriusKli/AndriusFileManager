@@ -18,14 +18,14 @@ public class Menu {
 
     private void fileOperation() {
         // TODO
-        System.out.println("If you want copy file press c: ");
+        System.out.println("If you want to copy a file, press c: ");
         String read = input.next().toLowerCase();
         if (read.charAt(0) == 'c'){
             System.out.println("Input file name: ");
             String readFileName = input.next();
             System.out.println("Input new file name: ");
-            String readNewFileNAme = input.next();
-            FileCopy fc = new FileCopy(readFileName, readNewFileNAme);
+            String readNewFileName = input.next();
+            FileCopy fc = new FileCopy(readFileName, readNewFileName);
         }
     }
 
