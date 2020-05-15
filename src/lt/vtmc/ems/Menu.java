@@ -20,9 +20,9 @@ public class Menu {
         char close = read.charAt(0);
         switch (close) {
             case 'c':
-                System.out.println("Input file name: ");
+                System.out.println("Enter the name of the file you want to copy: ");
                 String readFileName = input.next();
-                System.out.println("Input new file name: ");
+                System.out.println("Enter the name of the new file: ");
                 String readNewFileName = input.next();
                 FileCopy.copyByteByByte(readFileName, readNewFileName);
                 exitMenu();
