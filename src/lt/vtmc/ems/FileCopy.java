@@ -12,11 +12,11 @@ public class FileCopy {
         this.newFileName = newFileName;
     }
 
-    private void copyByteByByte() {
+    public void copyByteByByte() {
         try (FileInputStream fis = new FileInputStream(fileName);
              FileOutputStream fos = new FileOutputStream(newFileName)){
             int dataBox;
-            while ((dataBox = fis.read()) != 0){
+            while ((dataBox = fis.read()) != -1){
                 fos.flush();
                 fos.write(dataBox);
             }

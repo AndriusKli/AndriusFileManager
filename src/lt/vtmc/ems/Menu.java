@@ -8,7 +8,6 @@ public class Menu {
     private Scanner input = new Scanner(System.in);
 
     public void start() {
-            // TODO
             while (exit != 'y') {
                 System.out.println("Simple Java file manager ver. 1.0.\nSelect file operation");
                 fileOperation();
@@ -17,7 +16,6 @@ public class Menu {
     }
 
     private void fileOperation() {
-        // TODO
         System.out.println("If you want to copy a file, press c: ");
         String read = input.next().toLowerCase();
         if (read.charAt(0) == 'c'){
@@ -26,11 +24,11 @@ public class Menu {
             System.out.println("Input new file name: ");
             String readNewFileName = input.next();
             FileCopy fc = new FileCopy(readFileName, readNewFileName);
+            fc.copyByteByByte();
         }
     }
 
     private void exitMenu() {
-        // TODO
         System.out.println("Continue (y/n): ");
         String read = input.next().toLowerCase();
         char close = read.charAt(0);
