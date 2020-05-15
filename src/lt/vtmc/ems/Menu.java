@@ -4,45 +4,48 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private char exit;
+    private boolean exit;
     private Scanner input = new Scanner(System.in);
 
     public void start() {
-            while (exit != 'y') {
-                System.out.println("Simple Java file manager ver. 1.0.\nSelect file operation");
-                fileOperation();
-                exitMenu();
-            }
+        System.out.println("Simple Java file manager ver. 1.0.\nSelect file operation");
+        while (!exit) {
+            fileOperation();
+        }
     }
 
     private void fileOperation() {
-        System.out.println("If you want to copy a file, press c: ");
+        System.out.println("If you want to copy a file, press c. If you want to quit, press n. ");
         String read = input.next().toLowerCase();
-        if (read.charAt(0) == 'c'){
-            System.out.println("Input file name: ");
-            String readFileName = input.next();
-            System.out.println("Input new file name: ");
-            String readNewFileName = input.next();
-            FileCopy fc = new FileCopy(readFileName, readNewFileName);
-            fc.copyByteByByte();
+        char close = read.charAt(0);
+        switch (close) {
+            case 'c':
+                System.out.println("Input file name: ");
+                String readFileName = input.next();
+                System.out.println("Input new file name: ");
+                String readNewFileName = input.next();
+                FileCopy.copyByteByByte(readFileName, readNewFileName);
+                exitMenu();
+            case 'n':
+                exit = true;
+                break;
         }
     }
 
     private void exitMenu() {
-        System.out.println("Continue (y/n): ");
+        System.out.println("Exit? (y/n): ");
         String read = input.next().toLowerCase();
         char close = read.charAt(0);
         switch (close) {
-            case 'y':
-                exit = 'n';
-                break;
             case 'n':
-                exit = 'y';
+                exit = false;
+                break;
+            case 'y':
+                exit = true;
                 System.out.println("Good luck!");
                 break;
             default:
                 System.out.println("Wrong symbol!");
-                exit = 'n';
                 break;
         }
     }
