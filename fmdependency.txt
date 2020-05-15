@@ -1,0 +1,9 @@
+META-INF/MANIFEST.MF
+lt/
+lt/vtmc/
+lt/vtmc/ems/
+lt/vtmc/ems/FileCopy.class
+lt/vtmc/ems/Main.class
+lt/vtmc/ems/Menu.class
+lt/vtmc/ems/test.jar
+META-INF/
